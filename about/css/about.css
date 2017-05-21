@@ -1,0 +1,524 @@
+/*移动端*/
+@media only screen and (max-width:768px) {	
+	.about *{
+		font-family: "微软雅黑";
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	/*.about{
+		width: 100%;
+		height:1080px;
+		background: url(../img/about/about1.jpg) no-repeat center center;
+		background-size:cover;
+	}*/
+	.about{
+		background-image: url(../img/about/about1.jpg);
+		background-size:cover ;
+		background-position: center bottom;
+		position: relative;
+		background-repeat:no-repeat;
+		width: 100%;
+		/*min-height: 1000px;
+		max-height: 1300px;*/
+		height: 1500px;
+		margin: 0;
+		padding: 0;
+	}
+	.about input{
+	 	display: none;
+	}
+	/*对三个选项的设置*/
+	.tab-d{
+		position: absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: 50px;
+		height: 20px;
+		width: 90px;
+		z-index: 3;
+		text-align: center;
+	}
+	.tab{
+		display: inline-block;
+		height: 20px;
+		line-height: 20px;
+		width: 20px;
+		cursor: pointer;
+		color: #5EDFCC;
+		opacity: 0.3;
+	}
+	.tab h1{
+		font-size:50px ;
+	}
+	/*选项的单击效果*/
+	.tab{
+		transition: all 0.5s;
+	}
+	#tab-one:checked ~ .tab-d .tab:nth-of-type(1){
+		color: #5EDFCC;
+		opacity: 1;
+	}
+	#tab-two:checked ~ .tab-d .tab:nth-of-type(2){
+		color: #5EDFCC;
+		opacity: 1;
+	}
+	#tab-three:checked ~ .tab-d .tab:nth-of-type(3){
+		color: #5EDFCC;
+		opacity: 1;
+	}
+	/*旋转的盒子*/
+	.cube{
+		position: relative;
+		width: 95%;
+		margin:auto;
+		/*height: 1300px;*/
+		top: 75px;
+		transform-style: preserve-3d;
+	}
+	.tab-content{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 95%;
+		/*height: 1300px;*/
+		text-align: center;
+	  	transition: all 0.5s ease-in;
+		z-index: 0;
+		opacity: 0;
+	}
+	.tab-content:nth-of-type(1){
+		top: 50px;
+	}
+	.cube .tab-content:nth-child(2){
+		opacity: 0;
+		z-index: 0;
+	}
+	.cube .tab-content:nth-child(3){
+		opacity: 0;
+		z-index: 0;
+	}
+	
+	#tab-one:checked ~ .cube > .tab-content:nth-child(1) {
+		z-index: 2;
+		opacity: 1;  
+	}
+	#tab-two:checked ~ .cube > .tab-content:nth-child(2) {
+	  	z-index: 2;
+		opacity: 1;
+	}
+	
+	#tab-three:checked ~ .cube > .tab-content:nth-child(3) {
+		z-index: 2;
+		opacity: 1;  
+	}
+	/*下面的是工作室简介的css样式*/
+	.tab_content{
+		width: 95%;
+		margin: auto;
+		color: #fff;	
+	}
+	
+	.tab_content h1{
+		display: block;
+		margin-top: 80px;
+		color: #5EDFCC;
+		text-align: left;
+		line-height: 1em;
+	}
+	.tab_content h2{
+		display: block;
+		width: 95%;
+		color: #fff;
+		text-align: left;
+		margin: 50px 0;
+		line-height: 1em;
+		font-size: 20px;
+		transition: all 0.5s;
+	}
+
+	.tab-content figure{
+		width: 95%;
+		margin: 50px auto;
+	}
+	.tab-content figure img{
+		width: 100%;
+	
+	}
+	.tab_content h2:hover {
+		transform:scale(1.1,1.1);  
+		color: #5EDFCC;
+	}
+	
+	/*图片的hover效果*/
+
+	.tab-content-one,
+	.tab-content-two{
+		display: inline-block;
+		position: relative;
+		margin-top: 2%;
+		width: 45%;
+	}
+	.tab-content-one:nth-of-type(2n),
+	.tab-content-two:nth-of-type(2n){
+		margin-right: 8%;
+	}
+	#lest{
+		margin-right:0 ;
+	}
+	#content-a,
+	#content-b{
+		width: 80%;
+	}
+	.tab-content-one img,
+	.tab-content-two img{
+		width: 100%;
+	}
+	.tab-content-one h3,
+	.tab-content-one img,
+	.tab-content-two h3,
+	.tab-content-two img{
+		transition: all 0.8s;
+		z-index: -1;
+	}
+	.tab-content-one h3,
+	.tab-content-two h3{
+		position: absolute;
+		opacity: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		bottom: 30px;
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+		z-index: 1;
+	}
+	.tab-content-one::before,
+	.tab-content-two::before{
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		opacity: 0;
+		background: linear-gradient(to bottom, rgba(255,255,255,.8), rgba(3,3,3,0.5));
+		transition: all .8s;
+	}
+	.tab-content-one:hover::before,
+	.tab-content-two:hover::before{
+		opacity: 1;
+	}
+	.tab-content-one:hover h3,
+	.tab-content-two:hover h3{
+		opacity: 1;
+		color: white;
+	}
+	
+	.tab-content-one img,
+	.tab-content-two img{
+		width: 100%;
+		height: 100%;
+	}
+	.about-top{
+		width: 100%;
+		height: 32px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 80px;
+		bottom: 0;
+		z-index: 5;
+		text-align: center;
+	}
+	.about-top h2{
+		color: #666666;
+	}
+	.about-top p{
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: 40px;
+		border: 2px solid #5EDFCC;
+	}
+
+
+}
+/*平板端*/
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+	body{
+		padding: 0;
+		margin: 0;
+	}
+}
+
+
+
+/*电脑端*/
+@media only screen and (min-width:1200px ) {
+	body{
+		padding: 0;
+		margin: 0;
+	}
+.about *{
+	font-family: "微软雅黑";
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.about{
+	background-image: url(../img/about/about3.jpg);
+	position: relative;
+	background-repeat:no-repeat;
+	width: 100%;
+	height: 758px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.about input{
+ display: none;
+}
+
+/*对三个选项的设置*/
+.tab-d{
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	height: 20px;
+	width: 100px;
+	z-index: 3;
+	text-align: center;
+}
+.tab{
+	display: inline-block;
+	margin: 0 5px;
+
+	height: 20px;
+	line-height: 20px;
+	width: 20px;
+	cursor: pointer;
+	color: #5EDFCC;
+	opacity: 0.3;
+}
+/*选项的单击效果*/
+.tab{
+	transition: all 0.5s;
+}
+#tab-one:checked ~ .tab-d .tab:nth-of-type(1){
+	color: #5EDFCC;
+	opacity: 1;
+}
+#tab-two:checked ~ .tab-d .tab:nth-of-type(2){
+	color: #5EDFCC;
+	opacity: 1;
+}
+#tab-three:checked ~ .tab-d .tab:nth-of-type(3){
+	color: #5EDFCC;
+	opacity: 1;
+}
+/*旋转的盒子*/
+.cube{
+	position: relative;
+	width: 1200px;
+	margin:auto;
+	height: 650px;
+	top: 75px;
+	transform-style: preserve-3d;
+}
+.tab-content{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 1200px;
+	height: 620px;
+	text-align: center;
+  	transition: all 0.5s ease-in;
+	z-index: 0;
+	opacity: 0;
+}
+.cube .tab-content:nth-child(2){
+	opacity: 0;
+	z-index: 0;
+}
+.cube .tab-content:nth-child(3){
+	opacity: 0;
+	z-index: 0;
+}
+
+#tab-one:checked ~ .cube > .tab-content:nth-child(1) {
+	z-index: 2;
+	opacity: 1;  
+}
+#tab-two:checked ~ .cube > .tab-content:nth-child(2) {
+  	z-index: 2;
+	opacity: 1;
+}
+
+#tab-three:checked ~ .cube > .tab-content:nth-child(3) {
+	z-index: 2;
+	opacity: 1;  
+}
+
+/*下面的是工作室简介的css样式*/
+.tab_content h1{
+	display: block;
+	color: #5EDFCC;
+	text-align: left;
+	line-height: 1em;
+}
+.tab_content h2{
+	display: block;
+	color: #fff;
+	width: 540px;
+	text-align: left;
+	margin: 15px 0;
+	line-height: 1em;
+	font-size: 20px;
+	transition: all 0.5s;
+}
+.tab_content{
+	position: absolute;
+	right: -30px;
+	bottom: 150px;
+	width: 600px;
+	color: #fff;	
+}
+
+.tab-content figure{
+	position: absolute;
+	width: 450px;
+	/*height: 800px;*/
+	left:75px;
+
+	bottom: 120px;
+
+}
+.tab-content figure img{
+	width: 100%;
+
+}
+.tab_content h2:hover {
+	transform:scale(1.1,1.1);  
+	color: #5EDFCC;
+	border-radius:4px;
+}
+
+/*图片的hover效果*/
+.tab-content-one,
+.tab-content-two{
+	display: inline-block;
+	position: relative;
+	margin: 4px 4px;
+	width: 240px;
+	/*height: 240px;*/
+}
+.tab-content-one img,
+.tab-content-two img{
+	width: 100%;
+}
+.tab-content-one:nth-child(1),
+.tab-content-one:nth-child(2),
+.tab-content-one:nth-child(3),
+.tab-content-one:nth-child(4),
+.tab-content-two:nth-child(1),
+.tab-content-two:nth-child(2),
+.tab-content-two:nth-child(3),
+.tab-content-two:nth-child(4){
+	margin-top: 80px;
+	margin-bottom: 7px;
+}
+.tab-content-one h3,
+.tab-content-one img,
+.tab-content-two h3,
+.tab-content-two img{
+	transition: all 0.8s;
+	z-index: -1;
+}
+.tab-content-one h3,
+.tab-content-two h3{
+	position: absolute;
+	opacity: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: 30px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	z-index: 1;
+}
+/*.tab-content-two::after{
+	position: absolute;
+	bottom: 0;
+	height: 250px;
+	width: 250px;
+	background-color: rgba(255,255,255,0.5);
+	z-index: 5;
+}*/
+
+.tab-content-one::before,
+.tab-content-two::before{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	/*background: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0));*/ 
+	/*background-image: -webkit-linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0));*/ 
+	background: linear-gradient(to bottom, rgba(255,255,255,.8), rgba(3,3,3,0.5));
+	transition: all .8s;
+}
+.tab-content-one:hover::before,
+.tab-content-two:hover::before{
+	/*background-image: -webkit-linear-gradient(to bottom, rgba(94,223,204,0.5), rgba(3,3,3,0.5));*/
+	opacity: 1;
+}
+.tab-content-one:hover h3,
+.tab-content-two:hover h3{
+	opacity: 1;
+	color: white;
+}
+
+.tab-content-one img,
+.tab-content-two img{
+	width: 100%;
+	height: 100%;
+}
+.about-top{
+	width: 100%;
+	height: 32px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 80px;
+	bottom: 0;
+	z-index: 5;
+	text-align: center;
+}
+.about-top h2{
+	color: #666666;
+}
+.about-top p{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 40px;
+	border: 2px solid #5EDFCC;
+}
+
+}
