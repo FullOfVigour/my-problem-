@@ -1,0 +1,39 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	.ace{
+		width: 300px;
+		height: 200px;
+		position: relative;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border: 1px solid #ace;
+	}
+}
+@media only screen and (min-width: 768px){
+	.ace{
+		width: 800px;
+		height: 500px;
+		position: relative;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border: 1px solid #aaa;
+	}
+	.ace ul{
+		padding: 0;
+		text-align: center;
+	}
+	.ace ul li{
+		float: left;
+		display: inline-block;
+		
+	}
+}
