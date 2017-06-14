@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>乘法表</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 10px;				
+			}
+			#tbody{
+				
+			}
+			#tbody td{
+				display: inline-block;
+				margin: 5px 5px;
+				padding: 5px;
+				background-color: #ace;
+				color: #fff;
+			}
+		</style>
+	</head>
+<body>
+<input type="text" id="num"/>
+<input type="button" onclick="result()" value="生成乘法表"/>
+	<table>
+		<tbody id="tbody">
+		</tbody>
+	</table>
+<script type="text/javascript">
+		function result(){
+			var num = document.getElementById("num").value;	
+			var html = "";
+			var i = 1;
+			var j = 1;
+			for(i=1;i<=num;i++){
+				html+="<tr>";
+				for(j=1;j<=i;j++){
+					html+="<td>"+ j+" * "+i+" = "+(i*j)+"</td>";
+				}
+				html+="</tr>";
+			};
+			document.getElementById("tbody").innerHTML = html;
+		}
+</script>
+</body>
+</html>
