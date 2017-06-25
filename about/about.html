@@ -5,7 +5,6 @@
 		<title></title>
         <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/homepage.css" />
         <link rel="stylesheet" type="text/css" href="css/about.css"/>
 	</head>
 	<body>
@@ -49,11 +48,11 @@
 							<ul id="Carousel_ul">
 								<li class="Carousel_li"><img src="img/about/1.jpg" alt="" /></li>
 								<li class="Carousel_li"><img src="img/about/2.jpg" alt="" /></li>
-								<li class="Carousel_li"><img src="img/about/3.JPG" alt="" /></li>
-								<li class="Carousel_li"><img src="img/about/4.JPG" alt="" /></li>
-								<li class="Carousel_li"><img src="img/about/5.JPG" alt="" /></li>
-								<li class="Carousel_li"><img src="img/about/6.JPG" alt="" /></li>
-								<li class="Carousel_li"><img src="img/about/7.JPG" alt="" /></li>
+								<li class="Carousel_li"><img src="img/about/3.jpg" alt="" /></li>
+								<li class="Carousel_li"><img src="img/about/4.jpg" alt="" /></li>
+								<li class="Carousel_li"><img src="img/about/5.jpg" alt="" /></li>
+								<li class="Carousel_li"><img src="img/about/6.jpg" alt="" /></li>
+								<li class="Carousel_li"><img src="img/about/7.jpg" alt="" /></li>
 							</ul>
 						</div>
 						<p>酒楼内景展示</p>
@@ -68,27 +67,25 @@
 		</footer>
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 		<script>
-			var ulw=parseInt($("#Carousel").css("width"));
-			var l = 0;
+			var w=parseInt($("#Carousel").css("width"));
 			var li = document.getElementsByClassName("Carousel_li");
 			var n = -li.length + 3;
-			$(".Carousel_li").css("width",ulw/2.5);
-//			$(".Carousel_li").css("width",li.length*);
+			$(".Carousel_li").css("width",w/2.5);
 			var liw=parseInt($(".Carousel_li").css("width"));
+			$("#Carousel_ul").css("width",liw*li.length);
+			var l = -liw*0.5;
 			setInterval(function move(){
 				l=l-liw;
 				$("#Carousel_ul").animate({
 					left: l
 				},3000,"linear");
-				if(l == n*liw){
+				if(l < -Math.abs(n*liw)){
 					liw=-liw;
-					move();
 				}
-				if(l == 0){
+				if(l > 0 ){
 					liw=-liw;
-					move();
 				}
-			},3000);
+			});
 		</script>
 	</body>
 </html>
